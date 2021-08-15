@@ -16,13 +16,17 @@ request.put("addons", addons);
 
 Subscription subscription = razorpayClient.Subscriptions.create(request);
 
+JSONObject lineItem = new JSONObject();
+lineItem.put("amount", 100); // Note: The amount should be in paise.
+lineItem.put("name", "name_invoice");
+
+JSONArray lineItems = new JSONArray();
+lineItems.put(lineItem);
+
 JSONObject request = new JSONObject();
-request.put("quantity", 2);
+request.put("line_items", lineItems);
+request.put("date", 1480768625); // Timestamp in seconds
+request.put("currency", "INR");
+request.put("sms_notify", "0");
 
-JSONObject addonItem = new JSONObject();
-addonItem.put("name", "Extra Chair");
-addonItem.put("amount", 30000);
-addonItem.put("currency", "INR");
-request.put("item", addonItem);
-
-Addon addon = razorpayClient.Subscriptions.createAddon(<subscription_id>, request);
+Invoice invoice = razorpayClient.Invoices.create(request);
