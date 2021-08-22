@@ -1,28 +1,10 @@
-JSONObject request = new JSONObject();
-request.put("plan_id", "<plan_id>");
-request.put("customer_notify", 1);
-request.put("total_count", 6);
-request.put("start_at", 1495995837);
-
-JSONArray addons = new JSONArray();
-JSONObject addon = new JSONObject();
-JSONObject item = new JSONObject();
-item.put("name", "Delivery charges");
-item.put("amount", 30000);
-item.put("currency", "INR");
-addon.put("item", item);
-addons.put(addon);
-request.put("addons", addons);
-
-Subscription subscription = razorpayClient.Subscriptions.create(request);
-
-JSONObject request = new JSONObject();
-request.put("quantity", 2);
-
-JSONObject addonItem = new JSONObject();
-addonItem.put("name", "Extra Chair");
-addonItem.put("amount", 30000);
-addonItem.put("currency", "INR");
-request.put("item", addonItem);
-
-Addon addon = razorpayClient.Subscriptions.createAddon(<subscription_id>, request);
+<?php
+$num1 = 4;
+$num2 = 5;
+$result = $num1 + $num2;
+?>
+<html>
+<body>
+<?php echo $result; ?>
+</body>
+</html>
