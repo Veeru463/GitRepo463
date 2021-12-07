@@ -1,10 +1,9 @@
-working with sprint 8.3 user story
-
-working with sprint 8.3
-returnType methodName() {
-  // method body
+public class Main {
+  static void myMethod() {
+    System.out.println("I just got executed!");
+  }
+
+  public static void main(String[] args) {
+    myMethod();
+  }
 }
-modifier static returnType nameOfMethod (parameter1, parameter2, ...) {
-  // method body
-}
-working on stash second changes
